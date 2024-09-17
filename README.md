@@ -1,4 +1,7 @@
-# Dracula Themme for Quarto HTML Documents
+# Dracula Theme for Quarto HTML Documents
+
+![image](https://github.com/user-attachments/assets/4e4a3869-0e21-40c7-8cc6-0e7640756aa3)
+
 
 This is a simple scss file that can be used to apply the [Dracula](https://draculatheme.com/) theme to Quarto HTML documents.
 
