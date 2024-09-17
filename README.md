@@ -1,6 +1,10 @@
 # Dracula Theme for Quarto HTML Documents
 
-![image](https://github.com/user-attachments/assets/4e4a3869-0e21-40c7-8cc6-0e7640756aa3)
+
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="https://github.com/user-attachments/assets/a37de420-82cf-4e39-b642-5bc7bb191a31" alt="description" width="50%"/>
+  <img src="https://github.com/user-attachments/assets/4e4a3869-0e21-40c7-8cc6-0e7640756aa3" alt="description" width="50%"/>
+</div>
 
 
 This is a simple scss file that can be used to apply the [Dracula](https://draculatheme.com/) theme to Quarto HTML documents.
