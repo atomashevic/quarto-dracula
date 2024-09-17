@@ -1,0 +1,239 @@
+/*-- scss:defaults --*/
+// Color Variables based on Dracula Color Scheme
+$body-bg:               #22212c !default; // Background color
+$body-color:            #f8f8f2 !default; // Text color
+
+$primary:               #bd93f9 !default; // Purple (Primary accent)
+$secondary:             #6272a4 !default; // Comment color (Secondary accent)
+$success:               #50fa7b !default; // Green (Success)
+$info:                  #8be9fd !default; // Cyan (Info)
+$warning:               #f1fa8c !default; // Yellow (Warning)
+$danger:                #ff5555 !default; // Red (Danger)
+$orange:                #ffb86c !default; // Orange (Caution)
+
+$link-color:            $primary !default;
+$link-hover-color:      lighten($primary, 10%) !default;
+$link-decoration:       none !default;
+$link-hover-decoration: underline !default;
+
+$code-color:            $warning !default;
+$code-bg:               darken($body-bg, 5%) !default;
+
+$navbar-bg:             $body-bg !default;
+$navbar-color:          $body-color !default;
+
+/* Callout Colors */
+$callout-note-bg:          lighten($body-bg, 5%) !default;
+$callout-note-border:      $info !default;     // Cyan border for note
+
+$callout-warning-bg:       lighten($body-bg, 5%) !default;
+$callout-warning-border:   $warning !default;  // Yellow border for warning
+
+$callout-important-bg:     lighten($body-bg, 5%) !default;
+$callout-important-border: $danger !default;   // Red border for important
+
+$callout-tip-bg:           lighten($body-bg, 5%) !default;
+$callout-tip-border:       $success !default;  // Green border for tip
+
+$callout-caution-bg:       lighten($body-bg, 5%) !default;
+$callout-caution-border:   $orange !default;   // Orange border for caution
+
+/*-- scss:rules --*/
+
+// Body Styles
+body {
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+// Link Styles
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+// Heading Styles
+h1 {
+  color: $primary;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  color: $success;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  color: $info;
+  font-size: 1.75em;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  color: $warning;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  color: $danger;
+  font-size: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  color: $secondary;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+// List Styles
+ul, ol {
+  color: $body-color;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+ul li {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+ul li::before {
+  content: '•';
+  color: $primary;
+  position: absolute;
+  left: -1.2em;
+}
+
+ol li {
+  margin-bottom: 0.5em;
+}
+
+ol li::marker {
+  color: $primary;
+}
+
+// Nested Lists
+ul ul li::before,
+ol ul li::before {
+  content: '◦';
+  color: $success;
+}
+
+ul ol li::before,
+ol ol li::before {
+  content: '▪';
+  color: $info;
+}
+
+// Code Blocks
+code {
+  background-color: $code-bg;
+  color: $code-color;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: $code-bg;
+  color: $code-color;
+  padding: 1em;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+// Navbar Styles
+.navbar {
+  background-color: $navbar-bg;
+  color: $navbar-color;
+}
+
+// Button Styles
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  color: $body-color;
+}
+
+// Table Styles
+.table {
+  background-color: $body-bg;
+  color: $body-color;
+  border-color: $secondary;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+.table th, .table td {
+  border: 1px solid $secondary;
+  padding: 0.5em;
+}
+
+.table th {
+  background-color: darken($body-bg, 5%);
+}
+
+// Blockquote Styles
+blockquote {
+  border-left: 5px solid $secondary;
+  color: $body-color;
+  padding-left: 1em;
+  margin-left: 0;
+  margin-bottom: 1em;
+}
+
+// Math Expressions
+.math {
+  font-size: 120%;
+}
+
+// Increase font size for inline math in paragraphs and lists
+p .math, li .math, blockquote .math {
+  font-size: 110%;
+}
+
+// Callout Styles
+.callout {
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 5px solid $secondary !important;
+  background-color: lighten($body-bg, 5%) !important;
+}
+
+.callout-note.callout {
+  border-left-color: $callout-note-border !important;
+  background-color: $callout-note-bg !important;
+}
+
+.callout-warning.callout {
+  border-left-color: $callout-warning-border !important;
+  background-color: $callout-warning-bg !important;
+}
+
+.callout-important.callout {
+  border-left-color: $callout-important-border !important;
+  background-color: $callout-important-bg !important;
+}
+
+.callout-tip.callout {
+  border-left-color: $callout-tip-border !important;
+  background-color: $callout-tip-bg !important;
+}
+
+.callout-caution.callout {
+  border-left-color: $callout-caution-border !important;
+  background-color: $callout-caution-bg !important;
+}

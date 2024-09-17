@@ -1,0 +1,133 @@
+---
+title: "Dracula Themed Document"
+author: "Your Name"
+execute: 
+  echo: true
+# format:
+#   html:
+#     theme: ../dracula.scss
+#     highlight-style: dracula
+format:
+  html:
+    embed-resources: true
+    theme: ../dracula.scss
+    highlight-style: dracula
+---
+
+## Introduction
+
+Welcome to the **Dracula Theme Demo**. This document showcases various elements styled with the custom Dracula theme for Quarto.
+
+## Images
+
+![Dracula Logo](https://draculatheme.com/images/hero/dracula-icon.svg){width=100}
+
+
+## R plots
+
+First, let's create a Dracula ggplot theme:
+
+```{r}
+library(ggplot2)
+
+theme_dracula <- function() {
+  theme_minimal(base_size = 12, base_family = "Helvetica") +
+    theme(
+      plot.background = element_rect(fill = "#22212c", color = NA),
+      panel.background = element_rect(fill = "#282a36", color = NA),
+      panel.grid.major = element_line(color = "#44475a"),
+      panel.grid.minor = element_blank(),
+      axis.title = element_text(color = "#f8f8f2"),
+      axis.text = element_text(color = "#f8f8f2"),
+      plot.title = element_text(color = "#bd93f9", size = 14, face = "bold"),
+      plot.subtitle = element_text(color = "#f8f8f2"),
+      legend.background = element_rect(fill = "#22212c", color = NA),
+      legend.key = element_rect(fill = "#282a36", color = NA),
+      legend.text = element_text(color = "#f8f8f2"),
+      legend.title = element_text(color = "#f8f8f2")
+    )
+}
+```
+
+```{r}
+
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(gear))) +
+  geom_point(size = 3) +
+  labs(
+    title = "Fuel Efficiency by Weight",
+    subtitle = "Dracula Themed Plot",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Gears"
+  ) +
+  scale_color_manual(values = c("#ff79c6", "#8be9fd", "#50fa7b")) +
+  theme_dracula()
+```
+
+
+## Emphasis
+
+- *Italic text*
+- **Bold text**
+- ***Bold and italic text***
+
+## Numbered lists
+
+1. First item
+2. Second item
+3. Third item
+
+## Blockquote
+
+> This is a blockquote. It should be styled according to the theme's blockquote styling.
+
+## Lists
+
+### Unordered List
+
+- Item one
+- Item two
+  - Sub-item
+- Item three
+
+### Ordered List
+
+1. First item
+2. Second item
+   1. Sub-item
+3. Third item
+
+## Code Examples
+
+### Inline Code
+
+This is an example of inline code: `x = y + z`
+
+## Tables
+
+| Syntax      | Description |
+|-------------|-------------|
+| **Header**  | Title       |
+| *Italic*    | Text        |
+
+## Links
+
+You can find more about the Dracula theme [here](https://draculatheme.com/).
+
+
+
+## Math Equations
+
+Inline math: $E = mc^2$
+
+Display math:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+
+## Conclusion
+
+This concludes the demo of the **Dracula Theme** in Quarto. Feel free to add more elements to test the theme further.
+
+
