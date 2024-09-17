@@ -10,7 +10,7 @@ You can see the **live example [here](https://atomasevic.com/dracula-example)**.
 
 ## Usage
 
-To use this theme, simply copy the `dracula.scss` file to your project and include it in your Quarto configuration file.
+To use this theme, simply copy the [dracula.scss](dracula.scss) file to your project and include it in your Quarto configuration file.
 
 ```yaml
 project:
